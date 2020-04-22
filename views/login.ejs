@@ -1,0 +1,101 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Login</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="icon" type="image/png" href="/loginstf/images/icons/favicon.ico" />
+
+<link rel="stylesheet" type="text/css" href="/loginstf/vendor/bootstrap/css/bootstrap.min.css">
+
+<link rel="stylesheet" type="text/css" href="/loginstf/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+
+<link rel="stylesheet" type="text/css" href="/loginstf/fonts/iconic/css/material-design-iconic-font.min.css">
+
+<link rel="stylesheet" type="text/css" href="/loginstf/vendor/animate/animate.css">
+
+<link rel="stylesheet" type="text/css" href="/loginstf/vendor/css-hamburgers/hamburgers.min.css">
+
+<link rel="stylesheet" type="text/css" href="/loginstf/vendor/animsition/css/animsition.min.css">
+
+<link rel="stylesheet" type="text/css" href="/loginstf/vendor/select2/select2.min.css">
+
+<link rel="stylesheet" type="text/css" href="/loginstf/vendor/daterangepicker/daterangepicker.css">
+
+<link rel="stylesheet" type="text/css" href="/loginstf/css/util.css">
+<link rel="stylesheet" type="text/css" href="/loginstf/css/main.css">
+
+</head>
+<body>
+<div class="limiter">
+<div class="container-login100" style="background-image: url('/loginstf/images/bg-01.jpg');">
+<div class="wrap-login100">
+		<% include ./partials/messages %>
+
+<form class="login100-form validate-form" action="/accounts/login" method="POST">
+<span class="login100-form-logo">
+<i class="zmdi zmdi-landscape"></i>
+</span>
+<span class="login100-form-title p-b-34 p-t-27">
+Log in
+</span>
+<div class="wrap-input100 validate-input" data-validate="Enter username">
+<input class="input100" name="email" placeholder="Email Id"
+					type="email"
+                    id="email"
+/>
+<span class="focus-input100" data-placeholder="&#xf207;"></span>
+</div>
+<div class="wrap-input100 validate-input" data-validate="Enter password">
+<input class="input100" name="password" placeholder="Password"
+					type="password"
+                    id="password"
+
+/>
+<span class="focus-input100" data-placeholder="&#xf191;"></span>
+</div>
+<div class="contact100-form-checkbox">
+<input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
+<label class="label-checkbox100" for="ckb1">
+Remember me
+</label>
+</div>
+<div class="container-login100-form-btn">
+<button class="login100-form-btn">
+Login
+</button>
+</div>
+</form>
+</div>
+</div>
+</div>
+<div id="dropDownSelect1"></div>
+
+<script src="/loginstf/vendor/jquery/jquery-3.2.1.min.js" type="4a05849d85407167a21d24b8-text/javascript"></script>
+
+<script src="/loginstf/vendor/animsition/js/animsition.min.js" type="4a05849d85407167a21d24b8-text/javascript"></script>
+
+<script src="/loginstf/vendor/bootstrap/js/popper.js" type="4a05849d85407167a21d24b8-text/javascript"></script>
+<script src="/loginstf/vendor/bootstrap/js/bootstrap.min.js" type="4a05849d85407167a21d24b8-text/javascript"></script>
+
+<script src="/loginstf/vendor/select2/select2.min.js" type="4a05849d85407167a21d24b8-text/javascript"></script>
+
+<script src="/loginstf/vendor/daterangepicker/moment.min.js" type="4a05849d85407167a21d24b8-text/javascript"></script>
+<script src="/loginstf/vendor/daterangepicker/daterangepicker.js" type="4a05849d85407167a21d24b8-text/javascript"></script>
+
+<script src="/loginstf/vendor/countdowntime/countdowntime.js" type="4a05849d85407167a21d24b8-text/javascript"></script>
+
+<script src="/loginstf/js/main.js" type="4a05849d85407167a21d24b8-text/javascript"></script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13" type="4a05849d85407167a21d24b8-text/javascript"></script>
+<script type="4a05849d85407167a21d24b8-text/javascript">
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-23581568-13');
+	</script>
+<script src="https://ajax.cloudflare.com/cdn-cgi/scripts/a2bd7673/cloudflare-static/rocket-loader.min.js" data-cf-settings="4a05849d85407167a21d24b8-|49" defer=""></script></body>
+</html>

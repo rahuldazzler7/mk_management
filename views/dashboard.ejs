@@ -1,0 +1,94 @@
+<!DOCTYPE HTML>
+
+<head>
+	<meta charset="utf-8">
+    <title>Dashboard</title>
+    <!--table CSS-->
+    <!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="/empdashboard/images/icons/favicon.ico"/>
+    <!--===============================================================================================-->
+     
+    <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="/empdashboard/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="/empdashboard/vendor/animate/animate.css">
+    <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="/empdashboard/vendor/select2/select2.min.css">
+    <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="/empdashboard/vendor/perfect-scrollbar/perfect-scrollbar.css">
+    <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="/empdashboard/css/util.css">
+        <link rel="stylesheet" type="text/css" href="/empdashboard/css/main.css">
+    <!--===============================================================================================-->
+    
+	
+    </head>
+<body>     
+        <nav >
+                <% include navbar %>
+        </nav>
+    
+
+    <div class="clearfix"></div>
+
+    <!-- Start Table -->
+    
+    <% if(rusers.length>0) {%>  >
+        <div class="limiter">
+                        <div class="table100 ver5 m-b-110">
+                        <table data-vertable="ver5" id="example" class="table table-striped table-bordered dt-responsive nowrap"  style="overflow-x:auto;">
+						<thead>
+							<tr class="table100-head">
+								<th class="column100 column1" data-column="column1">Index</th>
+								<th class="column100 column2" data-column="column2">Host Name</th>
+								<th class="column100 column3" data-column="column3">Owner</th>
+								<th class="column100 column4" data-column="column4">Asset Type</th>
+								<th class="column100 column5" data-column="column5">SL Number</th>
+								<th class="column100 column6" data-column="column6">Current User</th>
+								<th class="column100 column7" data-column="column7">Cubical No</th>	
+								<th class="column100 column8" data-column="column8">Registered On</th>
+                                <th class="column100 column9" data-column="column9">IP Address</th>
+                                <% if(adusers.isadmin) {%>
+                                <th class="column100 column10" data-column="column10"></th>
+                                <th class="column100 column11" data-column="column11"></th>
+                                <% } %>
+							</tr>
+                        </thead>
+                        
+						<tbody>
+                                <% for(var i=0; i<rusers.length; i++) { %>
+								<tr >
+									<td class="column100 column1" data-column="column1"><%= i+1 %></td>
+									<td class="column100 column2" data-column="column2"><%= rusers[i].hostname %></td>
+									<td class="column100 column3" data-column="column3"><%= rusers[i].owner %></td>
+									<td class="column100 column4" data-column="column4"><%= rusers[i].assettype %></td>
+									<td class="column100 column5" data-column="column5"><%= rusers[i].serialnumber %></td>
+                                    <td class="column100 column6" data-column="column6"><%= rusers[i].currentuser %></td>
+                                    <td class="column100 column7" data-column="column7"><%= rusers[i].cubicalno %></td>
+                                    <td class="column100 column8" data-column="column8"><%= rusers[i].registrationdate %></td>
+                                    <td class="column100 column9" data-column="column9"><%= rusers[i].ipaddress %></td>
+                                    <% if(adusers.isadmin) {%>
+									<td><a href='/edit/<%= rusers[i]._id %>' class="btn btn-success">Edit</a></td> 
+                                    <td><a href='/delete/<%= rusers[i]._id %>' class="btn btn-danger">Delete</a></td>
+                                    <% } %>
+                                    </tr>
+                                    <% } %>
+									</tbody>
+                         </table>
+                </div>
+</div>
+
+		<% } %>
+    <!-- End Content -->
+    <% include ./shared/datatable %>
+
+    <!--===============================================================================================-->
+        <script src="/empdashboard/vendor/bootstrap/js/popper.js"></script>
+        <script src="/empdashboard/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <!--===============================================================================================-->
+        <script src="/empdashboard/vendor/select2/select2.min.js"></script>
+    <!--===============================================================================================-->
+        <script src="/empdashboard/js/main.js"></script>
+
+</body>
+</html>

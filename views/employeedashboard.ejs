@@ -1,0 +1,112 @@
+<!DOCTYPE HTML>
+
+<head>
+	<meta charset="utf-8">
+	
+
+    <title>Employee Dashboard</title>
+    <!--table CSS-->
+    <!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="/empdashboard/images/icons/favicon.ico"/>
+    <!--===============================================================================================-->
+     
+    <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="/empdashboard/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="/empdashboard/vendor/animate/animate.css">
+    <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="/empdashboard/vendor/select2/select2.min.css">
+    <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="/empdashboard/vendor/perfect-scrollbar/perfect-scrollbar.css">
+    <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="/empdashboard/css/util.css">
+        <link rel="stylesheet" type="text/css" href="/empdashboard/css/main.css">
+    <!--===============================================================================================-->
+    
+</head>
+<body>     
+        <nav >
+                <% include navbar %>
+        </nav>
+
+    <div class="clearfix"></div>
+    <% if(aemployees.length>0) {%>  >
+    <div class="table100 ver2 m-b-110" style="overflow-x:auto;">
+        <table data-vertable="ver2" id="example" class="table table-striped table-bordered dt-responsive nowrap"  style="overflow-x:auto;">
+            <thead>
+                <tr class="row100 head">
+                    <th class="column100 column1" data-column="column1">Index</th>
+                    <th class="column100 column2" data-column="column2">Name</th>
+                    <th class="column100 column3" data-column="column3">Employee ID</th>
+                    <th class="column100 column4" data-column="column4">Status</th>
+                    <th class="column100 column5" data-column="column5">Grade</th>
+                    <th class="column100 column6" data-column="column6">Tower</th>
+                    <th class="column100 column7" data-column="column7">Project Start</th>
+                    <th class="column100 column8" data-column="column8">Project End</th>
+                    <th class="column100 column9" data-column="column9">Hired On</th>
+                    <th class="column100 column10" data-column="column10">ServiceLine</th>
+                    <th class="column100 column11" data-column="column11">Supervisor</th>
+                    <th class="column100 column12" data-column="column12">Sub BU</th>
+                    <th class="column100 column13" data-column="column13">BT Start</th>
+                    <th class="column100 column14" data-column="column14">Gender</th>
+                    <th class="column100 column15" data-column="column15">Capgemini Email</th>
+                    <th class="column100 column16" data-column="column16">Personal Email</th>
+                    <th class="column100 column17" data-column="column17">City</th>
+                    <th class="column100 column18" data-column="column18">Contact</th>
+                    <th class="column100 column18" data-column="column18">Remarks</th>
+                    <% if(adusers.isadmin) {%>
+                    <th class="column100 column19" data-column="column19"></th>
+                    <% } %>
+                </tr>
+            </thead>
+            
+            <tbody>
+                    <% for(var i=0; i<aemployees.length; i++) { %>
+                <tr class="row100">
+                    <td class="column100 column1" data-column="column1"><%= i+1 %></td>
+                    <td class="column100 column2" data-column="column2"><%= aemployees[i].name %></td>
+                    <td class="column100 column3" data-column="column3"><%= aemployees[i].emp_id %></td>
+                    <td class="column100 column4" data-column="column4"><%= aemployees[i].status %></td>
+                    <td class="column100 column5" data-column="column5"><%= aemployees[i].grade %></td>
+                    <td class="column100 column6" data-column="column6"><%= aemployees[i].tower %></td>
+                    <td class="column100 column7" data-column="column7"><%= aemployees[i].project_start %></td>
+                    <td class="column100 column8" data-column="column8"><%= aemployees[i].project_end %></td>
+                    <td class="column100 column9" data-column="column9"><%= aemployees[i].hire_date %></td>
+                    <td class="column100 column10" data-column="column10"><%= aemployees[i].service_line %></td>
+                    <td class="column100 column11" data-column="column11"><%= aemployees[i].supervisor_name %></td>
+                    <td class="column100 column12" data-column="column12"><%= aemployees[i].subbu_name %></td>
+                    <td class="column100 column13" data-column="column13"><%= aemployees[i].btStart_date %></td>
+                    <td class="column100 column14" data-column="column14"><%= aemployees[i].gender %></td>
+                    <td class="column100 column15" data-column="column15"><%= aemployees[i].capgemini_email %></td>
+                    <td class="column100 column16" data-column="column16"><%= aemployees[i].email %></td>
+                    <td class="column100 column17" data-column="column17"><%= aemployees[i].city %></td>
+                    <td class="column100 column18" data-column="column18"><%= aemployees[i].contact %></td>
+                    <td class="column100 column19" data-column="column19"><%= aemployees[i].remarks %></td>
+                    <% if(adusers.isadmin) {%>
+                    <td><a href='/editemp/<%= aemployees[i]._id %>' class="btn btn-success">Edit</a></td>
+                    <% } %>
+                </tr>
+
+                <% } %>
+            </tbody>
+            
+        </table>
+    </div>
+    <% } %>
+    
+    <% include ./shared/datatable %>
+    
+    <!-- End Content -->
+    <!--===============================================================================================-->	
+	
+    <!--===============================================================================================-->
+        <script src="/empdashboard/vendor/bootstrap/js/popper.js"></script>
+        <script src="/empdashboard/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <!--===============================================================================================-->
+        <script src="/empdashboard/vendor/select2/select2.min.js"></script>
+    <!--===============================================================================================-->
+        <script src="/empdashboard/js/main.js"></script>
+    
+
+</body>
+</html>

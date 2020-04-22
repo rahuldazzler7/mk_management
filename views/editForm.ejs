@@ -1,0 +1,158 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Colorlib Templates">
+    <meta name="author" content="Colorlib">
+    <meta name="keywords" content="Colorlib Templates">
+
+    <!-- Title Page-->
+    <title>Asset Edit</title>
+
+    <!-- Icons font CSS-->
+    <link href="/assetregstf/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+    <link href="/assetregstf/vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <!-- Font special for pages-->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+    <!-- Vendor CSS-->
+    <link href="/assetregstf/vendor/select2/select2.min.css" rel="stylesheet" media="all">
+    <link href="/assetregstf/vendor/datepicker/daterangepicker.css" rel="stylesheet" media="all">
+
+    <!-- Main CSS-->
+    <link href="/assetregstf/css/main.css" rel="stylesheet" media="all">
+</head>
+
+<body>
+    <div class="page-wrapper bg-gra-02 p-t-130 p-b-100 font-poppins">
+        <div class="wrapper wrapper--w680">
+            <div class="card card-4">
+                <div class="card-body">
+                    <h2 class="title">Update Form</h2>
+                    <% include ./partials/messages %>
+                    <form action="/users/edit/<%=rusers.id %>" method="POST">
+                        <div class="row row-space">
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Host Name</label>
+                                    <input class="input--style-4" type="hostname"
+                                    id="hostname"
+                                    value="<%= rusers.hostname%>"
+                                    name="hostname"
+                                    placeholder="Host Name">
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                    <div class="input-group">
+                                            <label class="label">Registration Date</label>
+                                            <div class="input-group-icon">
+                                                <input class="input--style-4 js-datepicker" value="<%= rusers.registrationdate%>" type="text"  id="registrationdate" name="registrationdate" placeholder="20/02/1995">
+                                                <i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i>
+                                            </div>
+                                        </div>
+                            </div>
+                        </div>
+                        
+                        <div class="row row-space">
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">IP Address</label>
+                                    <input class="input--style-4" type="ipaddress"
+                                    id="ipaddress"
+                                    value="<%= rusers.ipaddress%>"
+                                    name="ipaddress"
+                                    placeholder="0.0.0.0">
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Owner</label>
+                                    <input class="input--style-4" type="owner"
+                                    id="owner"
+                                    value="<%= rusers.owner%>"
+                                    name="owner"
+                                    placeholder="Owner Name">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row row-space">
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Serial Number</label>
+                                    <input class="input--style-4" type="serialnumber"
+                                    id="serialnumber"
+                                    value="<%= rusers.serialnumber%>"
+                                    name="serialnumber"
+                                    placeholder="Serial Number">
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                    <div class="input-group">
+                                        <label class="label">Current User</label>
+                                        <input class="input--style-4" type="currentuser"
+                                        id="currentuser"
+                                        value="<%= rusers.currentuser%>"
+                                        name="currentuser"
+                                        placeholder="Current User">
+                                    </div>
+                                </div>
+                        </div>
+                        <div class="row row-space">
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Asset Type</label>
+                                    <div class="rs-select2 js-select-simple select--no-search">
+                                            <select name="assettype"  id="assettype" type="text">
+                                                <option disabled="disabled" selected="selected" value="<%= rusers.assettype%>">Choose option</option>
+                                                <option>Laptop</option>
+                                                <option>Desktop</option>
+                                                <option>Mobile</option>
+                                            </select>
+                                            <div class="select-dropdown"></div>
+                                            
+                                        </div>
+                                       
+                                        
+                                </div>
+
+                            </div>
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Cubical Number</label>
+                                    <input class="input--style-4" type="text"
+                                    value="<%= rusers.cubicalno%>"
+                                    id="cubicalno"
+                                    name="cubicalno"
+                                    placeholder="Cubical Number">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="p-t-15">
+                            <button class="btn btn--radius-2 btn--blue" type="submit">Update</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Jquery JS-->
+    <script src="/assetregstf/vendor/jquery/jquery.min.js"></script>
+    <!-- Vendor JS-->
+    <script src="/assetregstf/vendor/select2/select2.min.js"></script>
+    <script src="/assetregstf/vendor/datepicker/moment.min.js"></script>
+    <script src="/assetregstf/vendor/datepicker/daterangepicker.js"></script>
+
+    <!-- Main JS-->
+    <script src="/assetregstf/js/global.js"></script>
+
+</body>
+
+</html>
+<!-- end document-->
